@@ -11,9 +11,11 @@ package practice;
  */
 public class Solution {
     
-    public Solution() {
-        
-    }
+    /**
+     * Constructor of class solution
+     * No parameters needed
+     */
+    public Solution(){}
     
     /**
      * 9. Palindrome Number
@@ -52,6 +54,9 @@ public class Solution {
         return flag;
     }
     
+    /**
+     * Debugger function
+     */
     public void display() {
         System.out.println("Hey");
     }
