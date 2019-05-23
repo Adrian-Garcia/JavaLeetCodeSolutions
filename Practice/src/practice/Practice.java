@@ -16,8 +16,8 @@ public class Practice {
      */
     public static void main(String[] args) {
         
-        Solution solution();
+        Solution solution = new Solution();
         
-        System.out.println(solution.isPalindrome(1));
+        solution.display();
     } 
 }

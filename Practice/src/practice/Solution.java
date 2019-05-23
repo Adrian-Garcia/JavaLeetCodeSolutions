@@ -11,9 +11,15 @@ package practice;
  */
 public class Solution {
     
-    public Solution() {}
+    public Solution() {
+        
+    }
     
     public boolean isPalindrome(int x) {
         return true;
+    }
+    
+    public void display() {
+        System.out.println("Hey");
     }
 }
