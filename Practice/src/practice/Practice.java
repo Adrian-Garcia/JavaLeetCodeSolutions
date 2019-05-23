@@ -17,7 +17,11 @@ public class Practice {
     public static void main(String[] args) {
         
         Solution solution = new Solution();
+                
+        if (solution.isPalindrome(110)) 
+            System.out.print("YES");
         
-        solution.display();
+        else
+            System.out.print("NO");
     } 
 }
