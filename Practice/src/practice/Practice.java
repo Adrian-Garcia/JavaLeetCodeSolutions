@@ -17,11 +17,14 @@ public class Practice {
     public static void main(String[] args) {
         
         Solution solution = new Solution();
-                
-        if (solution.isPalindrome(110)) 
-            System.out.print("YES");
+        MinStack minStack = new MinStack();
         
-        else
-            System.out.print("NO");
+        minStack.push(-2);
+        minStack.push(0);
+        minStack.push(-3);
+        System.out.println(minStack.getMin());   
+        minStack.pop();
+        System.out.println(minStack.top());      
+        System.out.println(minStack.getMin());
     } 
 }

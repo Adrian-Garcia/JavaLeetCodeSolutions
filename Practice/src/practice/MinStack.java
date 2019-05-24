@@ -1,8 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/**
+ * 155. Min Stack 
+ *  Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
+ *      push(x) -- Push element x onto stack.
+ *      pop() -- Removes the element on top of the stack.
+ *      top() -- Get the top element.
+ *      getMin() -- Retrieve the minimum element in the stack.
+ * 
+ * Example:
+ *  MinStack minStack = new MinStack();
+ *  minStack.push(-2);
+ *  minStack.push(0);
+ *  minStack.push(-3);
+ *  minStack.getMin();   --> Returns -3.
+ *  minStack.pop();
+ *  minStack.top();      --> Returns 0. 
+ *  minStack.getMin();   --> Returns -2.
+*/
 package practice;
 
 import java.util.HashMap;
@@ -16,39 +29,29 @@ import java.util.Stack;
 public class MinStack {
 
     Stack<Integer> s = new Stack<Integer>();
-    Map< Integer,Integer> mapita; 
     int minVal;
-    int count;
     
     /** initialize your data structure here. */
     public MinStack() {
         Stack<Integer> s = new Stack<Integer>();
-        Map<Integer, Integer> mapita = new HashMap<Integer,Integer>(); 
         int minVal = Integer.MAX_VALUE;
-        int count = 0; 
     }
     
     public void push(int x) {
         
-        s.push(x);
-        
-        if (x < minVal) {
+        if (x <= minVal) {
+            
+            s.push(minVal);
             minVal = x;
-            count = 1;
-        }
+        }    
         
-        else {
-            count++;
-        }
+        s.push(x);
     }
     
     public void pop() {
         
-        if (s.peek() == minVal) {
-            count--;
-        }
-        
-        s.pop();
+        if (s.pop() == minVal)
+            minVal = s.pop();
         
         if (s.isEmpty())
             minVal = Integer.MIN_VALUE;
@@ -61,5 +64,4 @@ public class MinStack {
     public int getMin() {
         return minVal;
     }
-    
 }
